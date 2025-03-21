@@ -1,0 +1,29 @@
+#+TITLE: credo.el
+
+Provides commands to run [[https://hexdocs.pm/credo][Credo]] checks.
+
+This mode has been heavily inspired by the excellent [[https://github.com/ananthakumaran/exunit.el/][exunit.el]]. Thanks to
+@ananthakumaran!
+
+* Setup
+
+#+begin_src emacs-lisp
+  (add-hook 'elixir-mode-hook 'credo-mode)
+
+  ;; Optionally configure `transient-default-level' to 5 to show extra switches
+  ;; Or use `C-x l' to change the level of individual commands and switches
+  (setq transient-default-level 5) ;; default is 4
+#+end_src
+
+* Usage
+
+The default key-binding is =C-c C-,=. Invoking it will bring up a menu to show
+you the options you have.
+
+* Commands
+
+| Keyboard    | Description                                    |
+|-------------+------------------------------------------------|
+| =C-c C-, s= | *credo-suggest* Run credo suggest              |
+| =C-c C-, u= | *credo-list* Run credo list                    |
+| =C-c C-, r= | *credo-rerun* Re-run the last credo invocation |
